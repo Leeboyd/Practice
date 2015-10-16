@@ -1,0 +1,28 @@
+#head {
+    background-color: #EEE;
+    padding: 27px 0px;
+}
+header div{ 
+    padding: 1px 20px;
+    width: 920px;
+    margin: 0px auto;
+}
+ .logo {
+    float: left;
+    display: block;
+    width: 95px;
+    height: 96px;
+    padding: 0px;   
+}
+.list {
+    display: inline-block; 
+    margin: 0px;
+    padding: 0px;
+    line-height: 96px;
+    text-align: center;
+}
+
+li {
+    float: left;
+    width: 160px;
+}

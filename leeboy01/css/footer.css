@@ -1,0 +1,25 @@
+footer{
+	clear: both;
+	height: 60px;
+	background-color: #E6E7E9;
+	position: relative;
+}
+.ftleft{
+	color: #585858;
+	font-size: 12px;
+	position: absolute;
+	left: 400px;
+	top: 10px;
+}
+.ftright{
+	position: absolute;
+	right: 400px;
+	top: 10px;
+	width: 180px;
+}
+footer img{
+	width: 36px;
+	height:36px;
+	margin-left: 6px;
+}
+}

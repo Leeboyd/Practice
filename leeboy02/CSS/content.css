@@ -1,0 +1,102 @@
+#content {
+  width:100%;
+}
+#content h1 {
+  padding:40px;
+  text-align: center;
+  letter-spacing: 10px;
+  font: bold 36px raleway,sans-serif;
+  font-family: times new roman,times,serif;
+  color: #303132;
+}
+#content h6{
+  width:100px;
+  border-bottom: 1px solid #303132;
+  margin: 0px auto;
+}
+#content h2{
+  width: 700px;
+  margin:0px auto;
+  text-align: center;
+  font: normal 19px raleway,sans-serif;
+  color: #303132;
+  letter-spacing: 5.5px;
+}
+#contentphoto{
+  text-align: center;
+}
+#contentphoto>div{
+  display:inline-block;
+  background-repeat: no-repeat;
+  margin: 30px 15px 0px;
+  width: 298px;
+  height: 410px;
+}
+#left{
+  background-image: url("http://goo.gl/6N3Riw");
+  position: relative;
+}
+#mid{
+  background-image: url("http://goo.gl/9ztpkO");
+  position: relative;
+}
+#right{
+  background-image: url("http://goo.gl/NeCdsf");
+  position: relative;
+}
+#edpick {
+position: absolute;
+bottom:0px;;
+height: 50px;
+width: 100%;
+}
+#edpick a {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #303132;
+  transition: background-color 0.4s ease 0s;
+  cursor: pointer !important;
+  font: 18px/1.4em raleway,sans-serif;
+  line-height: 50px;
+}
+#edpick a:hover {
+  background-color: #535151;
+}
+#get {
+position: absolute;
+bottom:0px;;
+height: 50px;
+width: 100%;
+}
+#get a {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #303132;
+  transition: background-color 0.4s ease 0s;
+  cursor: pointer !important;
+  font: 18px/1.4em raleway,sans-serif;
+  line-height: 50px;
+}
+#get a:hover {
+  background-color: #535151;
+}
+#mid a{
+    position: absolute;
+    top:5%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font: 55px/1.4em "times new roman",times,serif;
+    color: #303132;
+    letter-spacing: 10px;
+    line-height: 85px;
+}
+#mid a:hover{
+  transition: color 0.4s ease 0s;
+  color:#b0aeb1;
+}

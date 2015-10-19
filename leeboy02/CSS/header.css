@@ -1,0 +1,51 @@
+.container {
+    position: relative;
+    width:100%;
+    height: 93px;
+    border: 3px solid #414041;
+}
+
+.container>div{
+  position:fixed;
+  top: 0px;
+  height: 93px;
+  width: 100%;
+  background-color: #535151;
+  z-index: 2;
+}
+#h1{
+  position: absolute;
+  left: 250px;
+  top: 30%;
+}
+
+a>span{
+  letter-spacing:0.3em;
+  margin: 0px;
+  font: bold 20px raleway,sans-serif;
+  color: #D3D3D3;
+}
+header>div>ul{
+  position: absolute;
+  top: 35%;
+  left: 30%;
+}
+
+header>div>ul>li {
+  text-align: center;
+  line-height: 30px;
+  width: 130px;
+  display: inline-block;
+  cursor: pointer;
+  font: 15px/1.4em raleway,sans-serif;
+}
+li>a:hover {
+  color:#b0aeb1;
+}
+li>a:link, a:active, a:visited {
+  color:white;
+}
+#cart{
+  position: absolute;
+  top: -10%;
+}

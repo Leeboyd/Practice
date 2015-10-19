@@ -1,0 +1,57 @@
+#gal {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("http://goo.gl/xDVwPL");
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+#whitebox {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 400px;
+  height: 160px;
+  position: absolute;
+  top: 38%;
+  left: 38%;
+  font-size: 40px;
+  padding: 20px 0px;
+}
+#boxtitle {
+  text-align:center;
+  font: bold 32px "times new roman",times,serif;
+  color:#414041;
+  letter-spacing: 0.02em;
+}
+#shopnow {
+position: absolute;
+left: 24%;
+top: 90px;
+width: 212px;
+height: 40px;
+}
+#shopnow a {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: #303132;
+  transition: background-color 0.4s ease 0s;
+  padding: 5px 0px;
+  cursor: pointer !important;
+  font: 18px/1.4em raleway,sans-serif;
+}
+
+#freeshop {
+    height:30px;
+    text-align:center;
+    font:1.2em raleway,sans-serif;
+    color: #303132;
+    word-spacing:5px;
+    background-color: rgba(211, 211, 211, 0.6);
+    line-height:30px;
+}
+#shopnow a:hover {
+  background-color: grey;
+}

@@ -1,2 +1,0 @@
-# Practice
-homework @ goodideas-studio

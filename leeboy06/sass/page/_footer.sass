@@ -1,0 +1,80 @@
+.footer
+  width: 70%
+  background-image: url("../img/bg2.gif")
+  .fourcontact
+    padding: 30px 35px
+    h3
+      font-size: 25px
+      line-height: 25px
+    >p
+      font-size: 16px
+      line-height: 16px
+    .testimonial
+      position: relative
+      background: #E6E6E6 none repeat scroll 0% 0%
+      border-radius: 3px
+      +fontstyle(16px, 18px, #57514C, padding, 18px 20px 18px 20px, border, 1px solid #DBDBDB, margin-bottom, 35px)
+    .triangle
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 15px 25px 0 0px
+      border-color: #E6E6E6 transparent transparent
+      position: absolute
+      left: 0px
+      bottom: -16px
+    .blog_speaker
+      width: 100%
+      display: flex
+      margin-bottom: 15px
+      .speaker
+        padding: 0px 15px
+  form      
+    .contactform
+      width: 100%
+      border-radius: 3px
+      background: #E6E6E6 none repeat scroll 0% 0%
+      +fontstyle(12px, 20px, #818181, padding, 3px 6px, border, 1px solid #D9D9D9, margin, 0px 0px 5px)
+    textarea
+      height: 100px
+      resize: none
+    .contactBtn
+      +fontstyle(16px, 20px, #FFF, padding, 3px 15px, border, 0, margin, 10px 5px 10px 0px)
+      font-weight: 700
+  .contactflk
+    position: relative
+    margin: 0px 10px 10px 0px
+    img
+      width: 100%
+    .flktrans
+      width: 100%
+      height: 100%
+      transition-duration: 0.01s
+      position: absolute
+      left: 0%
+      top: 0%
+      &:hover
+        background-color: rgba(0, 0, 0, 0.6)
+.copyright
+  background: #000
+  padding: 20px 0px
+  p
+    +fontstyle(14px,20px,#5c5c5c,padding-left,10px,border,0,margin,0)
+    a
+      color: #80B600
+  ul
+    li
+      +fontstyle(14px,20px,#5c5c5c,padding,0px 10px,border,0,margin,0)
+      display: inline-block
+      a
+        color: #5c5c5c
+        &:hover
+          color: #80B600
+.blackbg2
+  background-color: #000
+  height: 100px
+  width: 100%
+  position: absolute
+  bottom: 0%
+  left: 0%
+  z-index: -1

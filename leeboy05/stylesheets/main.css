@@ -1,0 +1,232 @@
+/* line 10, ../sass/main.sass */
+body {
+  font-size: 15px;
+  color: #EEE;
+  line-height: 15px;
+}
+
+/* line 14, ../sass/main.sass */
+.fix {
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 17, ../sass/main.sass */
+img {
+  width: 100%;
+}
+
+/* line 19, ../sass/main.sass */
+header {
+  background-color: #360836;
+}
+/* line 21, ../sass/main.sass */
+header ul {
+  margin: 0px;
+}
+/* line 23, ../sass/main.sass */
+header li {
+  margin: 0px 5px;
+}
+/* line 25, ../sass/main.sass */
+header a {
+  line-height: 45px;
+  color: #FF0048;
+  font-weight: 700;
+}
+/* line 29, ../sass/main.sass */
+header a:hover {
+  text-decoration: none;
+  color: #A178A3;
+}
+
+/* line 32, ../sass/main.sass */
+#title {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/cover.png");
+  padding-top: 100px;
+  position: relative;
+  margin-bottom: -25px;
+}
+/* line 40, ../sass/main.sass */
+#title h1 {
+  margin: 0px;
+  font: italic 65px georgia, palatino, "book antiqua", "palatino linotype", serif;
+  color: #FFF;
+}
+/* line 44, ../sass/main.sass */
+#title h5 {
+  font: 24px georgia, palatino, "book antiqua", "palatino linotype", serif;
+  color: #FFF;
+  letter-spacing: 0.4em;
+  margin-bottom: 100px;
+}
+/* line 49, ../sass/main.sass */
+#title h6 {
+  font: 20px georgia, palatino, "book antiqua", "palatino linotype", serif;
+  color: #FFF;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+}
+/* line 54, ../sass/main.sass */
+#title .dot {
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  border-radius: 5px;
+  background-clip: padding-box;
+  margin: 20px auto;
+}
+
+/* line 57, ../sass/main.sass */
+#pinkbox {
+  height: 45px;
+  width: 20%;
+  background-color: #FF0048;
+  position: relative;
+  margin: 50px auto 0px auto;
+  letter-spacing: 0.2em;
+  line-height: 45px;
+}
+
+/* line 65, ../sass/main.sass */
+.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 20px 0 20px;
+  border-color: #FF0048 transparent transparent;
+  margin: 0px auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* line 74, ../sass/main.sass */
+.trans {
+  width: 100%;
+  height: 100%;
+  transition-duration: 0.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(225, 225, 225, 0);
+  padding: 35% 5%;
+  font-size: 20px;
+  letter-spacing: 0.3em;
+}
+/* line 85, ../sass/main.sass */
+.trans:hover {
+  background-color: rgba(255, 0, 72, 0.45);
+  color: #e1e1e1;
+}
+
+/* line 88, ../sass/main.sass */
+#pinkbar {
+  letter-spacing: 0.2em;
+  text-align: center;
+  background-color: #FF0048;
+  height: 45px;
+  line-height: 45px;
+}
+
+/* line 95, ../sass/main.sass */
+#folks h4 {
+  font: 30px georgia, palatino, "book antiqua", "palatino linotype", serif;
+  color: #FF0048;
+  margin-top: 15px;
+  margin-bottom: 15px -10;
+  letter-spacing: 0.1em;
+}
+/* line 101, ../sass/main.sass */
+#folks h5 {
+  font: 24px georgia, palatino, "book antiqua", "palatino linotype", serif;
+  color: #FF0048;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  letter-spacing: 0.1em;
+}
+/* line 107, ../sass/main.sass */
+#folks h6 {
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #000;
+  line-height: 20px;
+}
+
+/* line 112, ../sass/main.sass */
+.btn-contact {
+  color: #EEE;
+  background-color: #000000;
+  transition-duration: 0.8s;
+  width: 25%;
+  margin: 50px auto;
+}
+/* line 118, ../sass/main.sass */
+.btn-contact:hover, .btn-contact:focus, .btn-contact:active {
+  color: #EEE;
+  background-color: #FF0048;
+}
+
+/* line 121, ../sass/main.sass */
+#aboutus {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../img/cover2.jpg");
+}
+
+/* line 126, ../sass/main.sass */
+#colright {
+  margin-bottom: 50px;
+  margin-top: 200px;
+}
+
+/* line 129, ../sass/main.sass */
+.colleft {
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+/* line 132, ../sass/main.sass */
+.colleft h5 {
+  font: 24px georgia, palatino, "book antiqua", "palatino linotype", serif;
+  color: #FFF;
+  letter-spacing: 0.4em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+/* line 138, ../sass/main.sass */
+.colleft p {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+  margin-bottom: 15px;
+  line-height: 18px;
+}
+/* line 143, ../sass/main.sass */
+.colleft .dot {
+  width: 10px;
+  height: 10px;
+  background: #FFF;
+  border-radius: 5px;
+  background-clip: padding-box;
+  padding: 0px;
+  left: 40%;
+  margin: 60px 10px 60px 0px;
+  display: inline-block;
+  float: none;
+}
+
+/* line 150, ../sass/main.sass */
+.btn-top {
+  color: #000;
+  background-color: #D5CFC1;
+  transition-duration: 0.5s;
+  width: 25%;
+  margin: 50px auto;
+}
+/* line 156, ../sass/main.sass */
+.btn-top:hover, .btn-top:focus, .btn-top:active {
+  color: #000;
+  background-color: #FF0048;
+}

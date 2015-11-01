@@ -1,0 +1,110 @@
+.paddingfix
+  padding: 0
+.marginfix
+  margin: 0
+.actived
+  background: #80b600
+.navbar-toggle .icon-bar
+  background-color: #80b600
+  width: 30px
+  height: 5px
+
+header
+  position: relative
+  .blackbg  
+    background-color: #161616
+    height: 100px
+    width: 100%
+    position: absolute
+    top: -10%
+    left: 0%
+    z-index: -1
+  .header-up
+    background-image: url("../img/bg2.gif")
+    margin: 20px 15%
+    width: 70%
+    box-shadow: 0px 0px 10px #000
+  img
+    margin: 5% 20px
+  .social-links
+    padding: 5% 20px
+@each $bg in (s0 0 - 0, s1 0 - 37, s2 -37 - 37, s3 -74 - 37, s4 -111-39)
+  .#{nth($bg, 1)}
+    background-image: url("../img/social.png")
+    background-position: #{nth($bg, 2)}px 0px
+    display: inline-block
+    height: 27px
+    width: 27px
+    &:hover
+      background-position: #{nth($bg, 2)}px 27px
+
+.header-down
+  margin: 20px 15% 0px 15%
+  width: 70%
+  .searchbox
+    padding-right: 0px
+    div
+      background: #fff
+      padding: 10px
+      position: relative
+      input
+        width: 100%
+        +fontstyle(18px,18px,#555,padding,10px,border,1px solid #CCC,margin,0)
+        background-color: #E6E3DF
+      button
+        background: transparent
+        position: absolute
+        right: 0px
+        top: 20px
+        border: none
+  .navbox
+    margin-bottom: 0px
+    padding-left: 0px
+    list-style: none
+    background: #fff
+    ul
+      li
+        display: inline
+        float: left
+        a
+          display: inline-block
+          height: 60px
+          +fontstyle(16px,60px,#000,padding, 0 15px, border-right, 1px solid #EAEAEA, margin,0)
+          &:focus, &:hover
+            background: #80b600
+            color: #FFF
+            text-decoration: none
+      .dropdown-menu
+        min-width: inherit
+        li
+          float: none
+          a
+            width: 100%
+            text-align: center
+            height: 40px
+            +fontstyle(16px,40px,#000,padding, 0 15px, border-bottom, 1px solid #EAEAEA, margin,0)
+
+/*480~768*/
+@media (max-width:767px)
+  .header-down
+    margin-top: 0px
+    background: #fff
+    .shade
+      +box-shadow(none)
+    .navbox
+      width: 100%
+      position: relative
+      button
+        position: absolute
+        top: -45px
+        right: 20px
+      ul li
+        
+        float: none
+        a
+          display: block
+          height: 40px
+          +fontstyle(16px,40px,#000,padding, 0 0 0 15px,border,none,margin,0)
+          a
+            background: transparent
+            color: #80b600

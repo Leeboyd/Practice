@@ -1,0 +1,26 @@
+@mixin bg($img)
+  background-image: url("../img/#{$img}")
+  width: image-height("../img/#{$img}")/2
+  height: image-height("../img/#{$img}")/2
+
+@mixin fontstyle($font-size, $line-height, $color, $padding, $paddingvalue, $border, $bordervalue, $margin, $marginvalue)
+  font-size: $font-size
+  color: $color
+  #{$padding}: $paddingvalue
+  #{$border}: $bordervalue
+  #{$margin}: $marginvalue
+  line-height: $line-height
+
+.shade
+  +box-shadow(0px 0px 5px #000)
+h3
+  +fontstyle(30px, 30px, #000, padding, 0px, border, none, margin, 0px 0px 22px)
+  font-weight: bold 
+a,a
+  color: #000
+  text-decoration: none
+  font-weight: 700
+  &:hover,&:focus
+    color: #80B600
+    text-decoration: none
+    font-weight: 700

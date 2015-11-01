@@ -1,0 +1,119 @@
+.main
+  width: 70%
+  background-image: url("../img/bg2.gif")
+  margin-bottom: 60px
+  .carousel-inner>.item>
+    img, a>img
+      margin: auto
+      width: 100%
+  .shuffle_next
+    background: url("../img/next.gif") 0 0 no-repeat
+    position: absolute
+    top: 40%
+    left: 65%
+    display: inline-block
+    height: 25%
+    width: 25%
+    &:hover
+      background-position: 0 -119px
+.fourbox
+  padding:  0px 20px 0px 20px
+  .box
+    position: relative
+    top: -20px
+    background: #E6E3DF
+    +fontstyle(16px, 16px, #3A3A3A, padding, 35px 15px 25px, border, 1px solid #DBDBDB, margin-bottom, 15px)
+    h4
+      +fontstyle(20px, 20px, #393939, padding, 0px, border, none, margin, 0px)
+      font-weight: 700
+    img
+      margin: 20px auto
+    p
+      padding: 0px 25px
+    a
+      background: #9C9C9C
+      display: inline-block
+      +fontstyle(15px, 30px, #1D1D1D, padding, 5px 20px 5px 20px, border, none, margin, 10px 0px 0px)
+      &:hover
+        background: #393939
+        color: #fff
+        text-decoration: none
+    &:hover
+      background: rgba(0, 0, 0, 0.6)
+      color: #fff
+      h4
+        color: #9C9C9C
+.threeintro
+  padding:  0px 20px
+  .intro_welcome
+    position: relative
+    margin-bottom: 20px
+    img
+      width: 100%
+    .trans
+      width: 100%
+      height: 100%
+      transition-duration: 0.03s
+      position: absolute
+      left: 0%
+      top: 0%
+      &:hover
+        display: block
+        background-color: rgba(0, 0, 0, 0.6)
+        background-image: url("../img/link1.png")
+        background-repeat: no-repeat
+        background-position: 50% 50%
+  p
+    +fontstyle(16px,20px,#7f7f7f,padding, 0px,border,0,margin-bottom, 20px)
+  .intro_why
+    border-bottom: 1px solid #E3E3E3
+    margin: 0px 0px 15px
+    padding-bottom: 5px
+    cursor: pointer
+    position: relative
+    display: flex
+    .arrow
+      min-height: 50px
+      min-width: 50px
+      width: 20%
+      background: transparent url("../img/arrow.png") no-repeat scroll left top
+      &:hover
+        background: transparent url("../img/arrowh.png") no-repeat scroll left top
+    p
+      width: 80%
+      +fontstyle(16px,26px,#7f7f7f,padding, 0px 5px, border, none,margin, 0px)
+  .intro_blog
+    width: 100%
+    display: flex
+    padding-bottom: 10px
+    border-bottom: 1px dashed rgb(219, 219, 219)
+    padding-bottom: 10px
+    margin-bottom: 15px
+    .blogleft
+      width: 40%
+      img
+        width: 100%
+    .blogright
+      width: 60%
+      padding: 0px 5px
+      span
+        display: inline-block
+        background: #80B600 none repeat scroll 0% 0%
+        font-weight: 700
+        +fontstyle(16px,20px,#FFF,padding, 3px 15px, border, none,margin-bottom, 5px)
+      p
+        +fontstyle(14px,16px,#7f7f7f,padding, 0px 5px, border, none,margin, 0px)  
+.fourimg
+  padding:  0px 35px
+  #owl-demo
+    .item
+      margin: 0px 15px 15px 15px
+      img
+        display: block
+        width: 100%
+        height: auto
+    .owl-controls .owl-buttons
+      position: absolute
+      top: 0%
+      right: 0%
+      margin-top: -55px

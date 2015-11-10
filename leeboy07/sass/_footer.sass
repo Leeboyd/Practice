@@ -1,0 +1,49 @@
+.footer
+	background: $t7color
+	padding: 1.3em 0
+	[class*="col-"]
+		text-align: center
+		padding: 20px 0px
+	.footerMenu
+		li
+			display: inline-block
+			&:last-child a
+				border-right: 0 none
+			a
+				height: 30px
+				+fontstyle(16px,30px,#FFF,padding,0 5px,border-right,1px solid #fff,margin,0)
+				&:hover
+					color: $t7acolor
+
+	.footerSocial
+		li
+			display: inline-block
+			margin: 0 5px
+			&:nth-child(1)
+				background: url(../img/footericon.png) left top
+			&:nth-child(2)
+				background: url(../img/footericon.png) -39px 0px
+			&:nth-child(3)
+				background: url(../img/footericon.png) right top
+			a
+				display: block
+				width: 30px
+				height: 30px
+
+/*768↓（480~768）*/
+@media (max-width:767px)
+	.footer
+		.footerMenu li
+			display: block
+			a
+				font-size: 14px
+				padding: 0 15px
+				border: none
+
+/*1024↑（1024~1279）*/
+@media (min-width:1024px)
+	.footer
+		[class*="col-"]
+			padding-bottom: 0px
+	.footerSocial
+		text-align: right

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/mustache.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
+    <script src="https://connect.facebook.net/en_US/all.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '570396196469402',
+            xfbml: true,
+            version: 'v2.5'
+        });
+    };
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <header class="container tac">
+        <h1><i class="fa fa-thumb-tack"> </i> Facebook api Practice</h1>
+        <p>To do: login, get "user_posts token", render all posts to HTML</p>
+    </header>  
+
+    <section class="container grad">
+        
+        <button type="button" class="btn btn-primary" id="fb-login"><i class="fa fa-facebook">  </i>  Login to Facebook</button>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th><i class='fa fa-pencil-square-o'> </i>文章ID</th>
+                    <th><i class='fa fa-clock-o'> </i>文章時間</th>
+                    <th>文章內容</th>
+                </tr>
+            </thead>
+            <tbody data-role="main" >
+                
+            </tbody>
+        </table>
+
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang='en-GB'>
+<head>
+  <meta charset='utf-8'>
+  <title>Ractive test</title>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <!--
+       3. You can always get the most recent stable version from the URL below.
+       If you want the newest features (unstable!), use the 'edge' version instead:
+
+           http://cdn.ractivejs.org/edge/ractive.min.js
+
+       If you need IE8 support, change 'ractive' to 'ractive-legacy'.
+  -->
+    <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
+    
+    <link rel="stylesheet"  href="stylesheet/app.css">
+</head>
+
+<body>
+  <h1>Movie Fire</h1>
+  <h3>Save all your Favorite Movies here</h3>
+  <hr/>
+
+  <div id='container'></div>
+  
+  
+
+<script id='template' type='text/ractive'>
+  <input type="text" id="movieName" placeholder="Enter your Favorite Movie Name" on-keypress='saveToList: {{this}}' />
+  <h4>My Favorite Movies</h4>
+  <ol id="favMovies">
+  {{#each movie}}
+      <li data-key={{key}}>{{name}}<button on-click='edit:{{key}}, {{name}}'>Edit</button><button on-click='del:{{key}}, {{name}}'>Delete</button></li>
+      
+  {{/each}}
+  </ol>
+
+</script>
+
+<script src="js/app3.js"></script>
+</body>
+</html>
+
+  
+
+  <!--
+    <label>
+    <input type='checkbox' checked='{{checked}}'>
+      {{#if checked}}checked!{{else}}not checked{{/if}}
+    </label>
+    
+<table>
+  <tr>
+    <th>#</th>
+    <th>name</th>
+    <th>address</th>
+    <th>tel</th>
+    <th>openHour</th>
+  </tr>
+
+  {{#each shop: ind}}
+    <tr>
+      <td>{{ind}}</td>
+      <td>{{name}}</td>
+      <td>{{address}}</td>
+      <td>{{tel}}</td>
+      <td>{{openHour}}</td>
+    </tr>
+  {{/each}}
+  -->

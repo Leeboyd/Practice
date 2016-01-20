@@ -6,68 +6,71 @@
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <!--
-       3. You can always get the most recent stable version from the URL below.
-       If you want the newest features (unstable!), use the 'edge' version instead:
-
-           http://cdn.ractivejs.org/edge/ractive.min.js
-
-       If you need IE8 support, change 'ractive' to 'ractive-legacy'.
-  -->
     <script src='http://cdn.ractivejs.org/latest/ractive.min.js'></script>
-    
-    <link rel="stylesheet"  href="stylesheet/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet"  href="stylesheets/app.css">
 </head>
 
 <body>
-  <h1>Movie Fire</h1>
-  <h3>Save all your Favorite Movies here</h3>
+<header>
+  <h1>Ractive.js CRUD ( 使用 Firebase <i class="fa fa-database"> </i> ) </h1>
+  <h4>Save all your 台南美食 <i class="fa fa-cutlery"> </i> 
+down here...</h4>
+</header>
   <hr/>
 
   <div id='container'></div>
-  
-  
 
 <script id='template' type='text/ractive'>
-  <input type="text" id="movieName" placeholder="Enter your Favorite Movie Name" on-keypress='saveToList: {{this}}' />
-  <h4>My Favorite Movies</h4>
-  <ol id="favMovies">
-  {{#each movie}}
-      <li data-key={{key}}>{{name}}<button on-click='edit:{{key}}, {{name}}'>Edit</button><button on-click='del:{{key}}, {{name}}'>Delete</button></li>
-      
+  
+  <h3><i class="fa fa-thumbs-up"></i>
+ My Favorite Foods <i class="fa fa-thumbs-o-up"></i>
+</h3>
+<table id='favFood' class="table table-inverse">
+  <tr>
+    <th>Store key</th>
+    <th>Store name</th>
+    <th>Store  name edit</th>
+    <th>Store address</th>
+    <th>Store address edit</th>
+    <th>Store del</th>
+  </tr>
+
+  {{#each foods: num}}
+    <tr data-key={{key}}>
+      <td>{{key}}</td>
+      <td>{{name}}</td>
+      <td><button class="btn btn-success" on-click='edit:{{key}}, {{name}}'>Edit Store <i class="fa fa-magic"></i></button></td>
+      <td>{{address}}</td>
+      <td><button class="btn btn-info" on-click='edit:{{key}}, {{address}}'>Edit Address <i class="fa fa-map-marker"></i></button></td>
+      <td><button class="btn btn-danger" on-click='del:{{key}}, {{name}}'>Delete</button></td>
+    </tr>
   {{/each}}
-  </ol>
+</table>
+
+<form id="addFood"class="form-inline">
+<h3><i class="fa fa-plus-circle"></i> 
+Create New Favorite Foods <i class="fa fa-plus-circle"></i>
+</h3>
+<section>
+  <div class="form-group">
+    <label for="storeName"> 店名： </label>
+    <input type="text" id="storeName"  class="form-control" placeholder="Enter Store name..." value='{{InputName}}'>
+  </div>
+  <div class="form-group">
+  <label for="storeAddress"> 地址： </label>
+    <input type="text" id="storeAddress" class="form-control" placeholder="Enter Store address..." value='{{InputAddress}}'>
+  </div>
+      <button class="btn btn-primary" on-click='submit:  {{InputName}}, {{InputAddress}}'>Add!</button>
+</section>
+<footer class='license'>
+  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="創用 CC 授權條款" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">本CRUD練習</span>由<span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">李柏毅</span>製作，以<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">創用CC 姓名標示-非商業性-相同方式分享 4.0 國際 授權條款釋出。</a>
+</footer>
+</form>
 
 </script>
 
 <script src="js/app3.js"></script>
 </body>
 </html>
-
-  
-
-  <!--
-    <label>
-    <input type='checkbox' checked='{{checked}}'>
-      {{#if checked}}checked!{{else}}not checked{{/if}}
-    </label>
-    
-<table>
-  <tr>
-    <th>#</th>
-    <th>name</th>
-    <th>address</th>
-    <th>tel</th>
-    <th>openHour</th>
-  </tr>
-
-  {{#each shop: ind}}
-    <tr>
-      <td>{{ind}}</td>
-      <td>{{name}}</td>
-      <td>{{address}}</td>
-      <td>{{tel}}</td>
-      <td>{{openHour}}</td>
-    </tr>
-  {{/each}}
-  -->

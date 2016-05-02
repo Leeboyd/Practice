@@ -11,7 +11,7 @@ dishRouter.use(bodyParser.json());
 
 // dishRouter.route('/')
 dishRouter.route('/')
-.get(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, callback) {
+.get(Verify.verifyOrdinaryUser, function (req, res, next) {
   Dishes.find({}, function (err, dish){
     if (err) throw err;
     console.log("搜尋所有的dishes");
@@ -19,7 +19,7 @@ dishRouter.route('/')
   });
 })
 
-.post(Verify.verifyOrdinaryUser, function (req, res, callback) {
+.post(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Dishes.create(req.body, function (err, dish){
     if (err) throw err;
     console.log('Dish created!');
@@ -32,7 +32,7 @@ dishRouter.route('/')
   });
 })
 
-.delete(Verify.verifyOrdinaryUser, function (req, res, callback){
+.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next){
   Dishes.remove({}, function (err, message){
     if (err) throw err;
     res.json(message);
@@ -41,7 +41,7 @@ dishRouter.route('/')
 
 //dishRouter.route('/:dishId')
 dishRouter.route('/:dishId')
-.get(function (req, res, callback) {
+.get(Verify.verifyOrdinaryUser, function (req, res, next) {
   Dishes.findById(req.params.dishId, function (err, dish){
     if (err) throw err;
     console.log("搜尋Id: "+req.params.dishId);
@@ -49,7 +49,7 @@ dishRouter.route('/:dishId')
   });
 })
 
-.put(function (req, res, callback) {
+.put(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Dishes.findByIdAndUpdate(req.params.dishId, {
     $set: req.body
   }, {
@@ -61,7 +61,7 @@ dishRouter.route('/:dishId')
   })
 })
 
-.delete(function (req, res, callback) {
+.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Dishes.findByIdAndRemove(req.params.dishId, function (err, resp) {
     if (err) throw err;
     res.json(resp);
@@ -70,7 +70,7 @@ dishRouter.route('/:dishId')
 
 //dishRouter.route('/:dishId/comments')
 dishRouter.route('/:dishId/comments')
-.get(function (req, res, callback) {
+.get(Verify.verifyOrdinaryUser, function (req, res, next) {
   Dishes.findById(req.params.dishId, function (err, dish) {
     if (err) throw err;
     console.log("搜尋Id: "+req.params.dishId+ " 的所有comments");
@@ -78,7 +78,7 @@ dishRouter.route('/:dishId/comments')
   })
 })
 
-.post(function (req, res, callback) {
+.post(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Dishes.findById(req.params.dishId, function (err, dish) {
     if (err) throw err;
     dish.comments.push(req.body);
@@ -90,7 +90,7 @@ dishRouter.route('/:dishId/comments')
   })
 })
 
-.delete(function (req, res, callback) {
+.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Dishes.findById(req.params.dishId, function (err, dish) {
     if (err) throw err;
     for (var i = (dish.comments.length - 1); i >= 0; i--) {
@@ -108,13 +108,13 @@ dishRouter.route('/:dishId/comments')
 
 //dishRouter.route('/:dishId/comments/:commentId')
 dishRouter.route('/:dishId/comments/:commentId')
-.get(function (req, res, callback) {
+.get(Verify.verifyOrdinaryUser, function (req, res, next) {
   Dishes.findById(req.params.dishId, function (err, dish) {
     if (err) throw err;
     res.json(dish.comments.id(req.params.commentId));
   })
 })
-.put(function (req, res, callback) {
+.put(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   // We delete the existing commment and insert the updated
   // comment as a new comment
   Dishes.findById(req.params.dishId, function (err, dish) {
@@ -128,7 +128,7 @@ dishRouter.route('/:dishId/comments/:commentId')
     })
   })
 })
-.delete(function (req, res, callback) {
+.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Dishes.findById(req.params.dishId, function (err, dish) {
     dish.comments.id(req.params.commentId).remove();
     dish.save(function (err, resp) {

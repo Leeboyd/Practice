@@ -4,13 +4,13 @@ var express = require ('express'),
 
 var Promos = require('../models/promotions');
 
-var Verify = require ('./veryify');
+var Verify = require('./verify');
 
 var promoRouter = express.Router();
 promoRouter.use(bodyParser.json());
 
 promoRouter.route('/')
-.get(Verify.verifyOrdinaryUser, function (req, res, callback) {
+.get(Verify.verifyOrdinaryUser, function (req, res, next) {
   Promos.find({}, function (err, promo){
     if (err) throw err;
     console.log('Will send all the promotions for you');
@@ -18,7 +18,7 @@ promoRouter.route('/')
   })
 })
 
-.post(function (req, res, callback) {
+.post(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Promos.create(req.body, function (err, promo){
     if (err) throw err;
     console.log('Promo created!');
@@ -31,7 +31,7 @@ promoRouter.route('/')
   });
 })
 
-.delete(function (req, res, callback){
+.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next){
   Promos.remove({}, function (err, message){
     if (err) throw err;
     console.log('Deleting all leaders');
@@ -40,7 +40,7 @@ promoRouter.route('/')
 })
 
 promoRouter.route('/:promoId')
-.get(function (req, res, callback) {
+.get(Verify.verifyOrdinaryUser, function (req, res, next) {
   Promos.findById(req.params.promoId, function (err, promo){
     if (err) throw err;
     console.log('Will send details of the promotions: '+req.params.promoId+' to you!');
@@ -48,7 +48,7 @@ promoRouter.route('/:promoId')
   });
 })
 
-.put(function (req, res, callback) {
+.put(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Promos.findByIdAndUpdate(req.params.promoId, {
     $set: req.body
   }, {
@@ -60,7 +60,7 @@ promoRouter.route('/:promoId')
   })
 })
 
-.delete(function (req, res, callback) {
+.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Promos.findByIdAndRemove(req.params.promoId, function (err, message) {
     if (err) throw err;
     console.log('Deleting promotions: '+req.params.promoId);

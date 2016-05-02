@@ -13,11 +13,10 @@ exports.getToken = function (user) {
 exports.verifyOrdinaryUser = function (req, res, next) {
   // check header or url parameter or post parameters for token
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
-  // console.log(token);
   // decode token
   if (token) {
-    console.log('進入檢查token ');
     // verifies secret and checks exp
+    console.log('\ntoken existing\n');
     jwt.verify(token, config.secretKey, function (err, decoded) {
       if (err) {
         var err = new Error ('You are not authenticated!');
@@ -40,9 +39,10 @@ exports.verifyOrdinaryUser = function (req, res, next) {
 // The verifyAdmin() function will return Next(); if the user is an admin, otherwise it will return Next(err);
 exports.verifyAdmin = function (req, res, next){
   if (req.decoded._doc.admin) {
-    console.log('Pass');
+    console.log('You are a admin.');
     next();
   } else {
+    console.log('You are not a admin.');
     var err = new Error ('You are not authorized to perform this operation.');
     err.status = 403;
     return next(err);

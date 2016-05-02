@@ -4,13 +4,13 @@ var express = require ('express'),
 
 var Leaders = require ('../models/leadership');
 
-var Verify = require ('./veryify');
+var Verify = require('./verify');
 
 var leaderRouter = express.Router();
 leaderRouter.use(bodyParser.json());
 
 leaderRouter.route('/')
-.get(Verify.verifyOrdinaryUser, function (req, res, callback) {
+.get(Verify.verifyOrdinaryUser, function (req, res, next) {
   Leaders.find({}, function (err, leader){
     if (err) throw err;
     console.log("搜尋所有的leaders");
@@ -18,7 +18,7 @@ leaderRouter.route('/')
   });
 })
 
-.post(function (req, res, callback) {
+.post(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Leaders.create(req.body, function (err, leader){
     if (err) throw err;
     console.log('leader created!');
@@ -31,7 +31,7 @@ leaderRouter.route('/')
   });
 })
 
-.delete(function (req, res, callback){
+.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next){
   Leaders.remove({}, function (err, message){
     if (err) throw err;
     console.log('Deleting all leaders');
@@ -41,7 +41,7 @@ leaderRouter.route('/')
 });
 
 leaderRouter.route('/:leaderId')
-.get(function (req, res, callback) {
+.get(Verify.verifyOrdinaryUser, function (req, res, next) {
   Leaders.findById(req.params.leaderId, function (err, leader){
     if (err) throw err;
     console.log('Will send details of the leader: '+req.params.leaderId+' to you!');
@@ -49,7 +49,7 @@ leaderRouter.route('/:leaderId')
   });
 })
 
-.put(function (req, res, callback) {
+.put(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Leaders.findByIdAndUpdate(req.params.leaderId, {
     $set: req.body
   }, {
@@ -61,7 +61,7 @@ leaderRouter.route('/:leaderId')
   });
 })
 
-.delete(function (req, res, callback) {
+.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Leaders.findByIdAndRemove(req.params.leaderId, function (err, message) {
     if (err) throw err;
     console.log('Deleting leader: '+req.params.leaderId);

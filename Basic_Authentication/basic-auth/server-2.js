@@ -13,7 +13,7 @@ app.use(morgan('dev'))
 app.use(cookieParser('12345-67890-09876-54321'));
 
 function auth (req, res, next) {
-  if (!req.signedCookies.user) {
+  if (!req.signedCookies.signed_user) {
     console.log('目前沒有cookies');
     var authHeader = req.headers.authorization
     if (!authHeader) {
@@ -32,7 +32,7 @@ function auth (req, res, next) {
       // Simply include the signed option set to true.
       // Then res.cookie() will use the secret passed to cookieParser(secret) to sign the value.
       // res.cookie('user','admin',{signed: true})
-      res.cookie('user','admin')
+      // res.cookie('user','admin')
       res.cookie('signed_user','admin',{signed: true})
       next(); //authorized 可以過了
     } else {
@@ -42,7 +42,7 @@ function auth (req, res, next) {
     }
   } else {
     console.log('有cookies的狀態\n',req.headers);
-    if (req.signedCookies.user === 'admin') {
+    if (req.signedCookies.signed_user === 'admin') {
       next(); //authorized 可以過了
     } else {
       var err = new Error('You are not admin!')

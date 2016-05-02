@@ -37,7 +37,7 @@
 ***
 *注意, 在測試所有功能之前 MongoDB server 都必須先打開*
 ***
-- basic-auth
+  1. basic-auth
 ```ruby
 1. server.js
 實做一個要求輸入"帳號密碼"的簡易認證功能。
@@ -47,7 +47,7 @@
 成功登入後，Server端儲存在session紀錄的資料，並傳輸給用戶端的 cookie，
 用戶端的記憶體會儲存這些資料，用戶端在後續的req會帶著session資訊供Server端查詢。
 ```
-- rest-server-passport
+  2. rest-server-passport
 ```ruby
 利用Express framework開發REST API，
 Routing "GET"、"POST"、"DELETE"、"PUT" 四個動作，

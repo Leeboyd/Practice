@@ -5,22 +5,22 @@ require('mongoose-currency').loadType(mongoose);
 var Currency = mongoose.Types.Currency;
 
 var commentSchema = new Schema({
-  rating: {
-    type: Number,
-    min: 1,
-    max: 5,
-    required: true
-  },
-  comment: {
-    type: String,
-    required: true
-  },
-  author: {
-    type: String,
-    required: true
-  }
-},{
-  timestamps: true
+    rating: {
+        type: Number,
+        min: 1,
+        max: 5,
+        required: true
+    },
+    comment: {
+        type: String,
+        required: true
+    },
+    postedBy: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Users'
+    },
+}, {
+    timestamps: true
 });
 
 // create a Schema
@@ -28,7 +28,7 @@ var dishSchema = new Schema({
   name: {
     type: String,
     required: true,
-    unique: false
+    unique: true
   },
   image: {
     type: String,
@@ -45,7 +45,7 @@ var dishSchema = new Schema({
   price: {
     type: Currency,
     required: true,
-    default: 0.99
+    default: 0.00
   },
   description: {
     type: String,
@@ -57,5 +57,5 @@ var dishSchema = new Schema({
   collection: 'Dishes'
 });
 
-var Dishes = mongoose.model('Dish', dishSchema);
+var Dishes = mongoose.model('Dishes', dishSchema);
 module.exports = Dishes;

@@ -16,15 +16,15 @@ exports.verifyOrdinaryUser = function (req, res, next) {
   // decode token
   if (token) {
     // verifies secret and checks exp
-    console.log('\ntoken existing\n');
     jwt.verify(token, config.secretKey, function (err, decoded) {
       if (err) {
-        var err = new Error ('You are not authenticated!');
+        var err = new Error ('Login before you start!');
         err.status = 401;
         return next(err);
       } else {
         // if everything is good, save to request for use in other routes
         req.decoded = decoded;
+        console.log('usersname: '+req.decoded._doc.username);
         next();
       }
     });

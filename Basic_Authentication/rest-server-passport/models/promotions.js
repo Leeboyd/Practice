@@ -18,7 +18,7 @@ var promoSchema = new Schema({
   },
   price: {
     type: Currency,
-    default: 0.99
+    default: 0.00
   },
   description: {
     type: String,
@@ -28,5 +28,5 @@ var promoSchema = new Schema({
   collection: 'Promos'
 })
 
-var Promos = mongoose.model('Promo', promoSchema);
+var Promos = mongoose.model('Promos', promoSchema);
 module.exports = Promos;

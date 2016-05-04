@@ -16,7 +16,7 @@ var leaderSchema = new Schema({
   },
   abbr: {
     type: String,
-    default: 'AAA'
+    default: ''
   },
   description: {
     type: String,
@@ -26,5 +26,5 @@ var leaderSchema = new Schema({
   collection: 'Leaders'
 })
 
-var Leaders = mongoose.model('Leader', leaderSchema);
+var Leaders = mongoose.model('Leaders', leaderSchema);
 module.exports = Leaders;

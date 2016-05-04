@@ -12,9 +12,11 @@ dishRouter.use(bodyParser.json());
 // dishRouter.route('/')
 dishRouter.route('/')
 .get(Verify.verifyOrdinaryUser, function (req, res, next) {
-  Dishes.find({}, function (err, dish){
+  Dishes.find({})
+  .populate('comments.postedBy')
+  .exec(function (err, dish) {
     if (err) throw err;
-    console.log("搜尋所有的dishes");
+    console.log("Listing all dishes.")
     res.json(dish);
   });
 })
@@ -27,7 +29,7 @@ dishRouter.route('/')
 
     res.writeHead(200, {
       'Content-Type': 'text/plain'
-    })
+    });
     res.end('Added the dish with id: '+id);
   });
 })
@@ -42,10 +44,13 @@ dishRouter.route('/')
 //dishRouter.route('/:dishId')
 dishRouter.route('/:dishId')
 .get(Verify.verifyOrdinaryUser, function (req, res, next) {
-  Dishes.findById(req.params.dishId, function (err, dish){
+  Dishes.findById(req.params.dishId)
+  .populate('comments.postedBy')
+  .exec(function (err, dish) {
     if (err) throw err;
-    console.log("搜尋Id: "+req.params.dishId);
-    res.json(dish);
+    if (dish === null) return res.end('No such dish.');
+    console.log("Search dish Id: "+req.params.dishId);
+    res.json(dish)
   });
 })
 
@@ -56,7 +61,8 @@ dishRouter.route('/:dishId')
     new: true
   }, function (err, dish) {
     if (err) throw err;
-    console.log("更新Id: "+req.params.dishId+" 的dish內容");
+    if (dish === null) return res.end('No such dish.');
+    console.log("Update dishId: "+req.params.dishId);
     res.json(dish);
   })
 })
@@ -64,33 +70,42 @@ dishRouter.route('/:dishId')
 .delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
   Dishes.findByIdAndRemove(req.params.dishId, function (err, resp) {
     if (err) throw err;
+    if (resp === null) return res.end('No such dish.');
+    //show you the deleted dish.
     res.json(resp);
   })
 });
 
 //dishRouter.route('/:dishId/comments')
 dishRouter.route('/:dishId/comments')
-.get(Verify.verifyOrdinaryUser, function (req, res, next) {
-  Dishes.findById(req.params.dishId, function (err, dish) {
+.all(Verify.verifyOrdinaryUser)
+
+.get(function (req, res, next) {
+  Dishes.findById(req.params.dishId)
+  .populate('comments.postedBy')
+  .exec(function (err, dish) {
     if (err) throw err;
     console.log("搜尋Id: "+req.params.dishId+ " 的所有comments");
     res.json(dish.comments);
   })
 })
 
-.post(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
+.post(function (req, res, next) {
+  console.log('Target dish: '+req.params.dishId);
   Dishes.findById(req.params.dishId, function (err, dish) {
     if (err) throw err;
+    // 新增{postedBy: 使用者id}到comment物件, 使用者id作為key連結兩個document
+    req.body.postedBy = req.decoded._doc._id;
     dish.comments.push(req.body);
     dish.save(function (err, dish) {
       if (err) throw err;
-      console.log('Updated Comments!');
+      console.log('Add a comments!');
       res.json(dish);
     })
-  })
+  });
 })
 
-.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
+.delete(Verify.verifyAdmin, function (req, res, next) {
   Dishes.findById(req.params.dishId, function (err, dish) {
     if (err) throw err;
     for (var i = (dish.comments.length - 1); i >= 0; i--) {
@@ -104,37 +119,70 @@ dishRouter.route('/:dishId/comments')
       res.end('Deleted all comments!');
     });
   });
-})
+});
 
 //dishRouter.route('/:dishId/comments/:commentId')
 dishRouter.route('/:dishId/comments/:commentId')
-.get(Verify.verifyOrdinaryUser, function (req, res, next) {
-  Dishes.findById(req.params.dishId, function (err, dish) {
+.all(Verify.verifyOrdinaryUser)
+
+.get(function (req, res, next) {
+  Dishes.findById(req.params.dishId)
+  .populate('comments.postedBy')
+  .exec(function (err, dish) {
     if (err) throw err;
+    console.log("Show you commentId: "+req.params.commentId+'\nof dishId '+req.params.dishId);
     res.json(dish.comments.id(req.params.commentId));
-  })
+  });
 })
-.put(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
-  // We delete the existing commment and insert the updated
-  // comment as a new comment
+
+.put(function (req, res, next) {
+  // delete the existing commment and insert the updated
   Dishes.findById(req.params.dishId, function (err, dish) {
     if (err) throw err;
-    dish.comments.id(req.params.commentId).remove();
-    dish.comments.push(req.body);
-    dish.save(function (err, dish) {
-      if (err) throw err;
-      console.log('更新了特定 Comments!');
-      res.json(dish);
-    })
-  })
+    if (!dish.comments.id(req.params.commentId)) {
+      var error = new Error ('No such comment.');
+      error.status = 404;
+      return next(error);
+    }
+    console.log('user._id: '+req.decoded._doc._id+'\n'+'comment postedBy: '+dish.comments.id(req.params.commentId).postedBy);
+    if (req.decoded._doc._id === dish.comments.id(req.params.commentId).postedBy) {
+      dish.comments.id(req.params.commentId).remove();
+      req.body.postedBy = req.decoded._doc._id;
+      dish.comments.push(req.body);
+      dish.save(function (err, dish) {
+        if (err) throw err;
+        console.log('Updated as a new Comments!');
+        res.json(dish);
+      });
+    } else {
+      var error = new Error ('you are not allowed to edit this comment.');
+      error.status = 405;
+      return next(error);
+    }
+  });
 })
-.delete(Verify.verifyOrdinaryUser, Verify.verifyAdmin, function (req, res, next) {
+
+.delete(function (req, res, next) {
   Dishes.findById(req.params.dishId, function (err, dish) {
+    if(!dish.comments.id(req.params.commentId)) {
+      var error = new Error ('No such comment.')
+      error.status = 404;
+      return next (error);
+    }
+    console.log('user._id: '+req.decoded._doc._id+'\n'+'comment postedBy: '+dish.comments.id(req.params.commentId).postedBy);
+
+    if (dish.comments.id(req.params.commentId).postedBy != req.decoded._doc._id) {
+      var err = new Error('You are not authorized to delete this comment!');
+      err.status = 403;
+      return next (err);
+    }
     dish.comments.id(req.params.commentId).remove();
+    console.log('deleting a comments Id: '+req.params.commentId);
     dish.save(function (err, resp) {
       if (err) throw err;
       res.json(resp);
-    })
-  })
-})
+    });
+  });
+});
+
 module.exports = dishRouter;

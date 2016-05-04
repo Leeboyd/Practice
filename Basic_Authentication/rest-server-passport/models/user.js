@@ -7,7 +7,18 @@ var User = new Schema({
     type: String,
     require: true
   },
-  password: String,
+  password: {
+    type: String,
+    require: true
+  },
+  firstname: {
+    type: String,
+    default: ''
+  },
+  lastname: {
+    type: String,
+    default: ''
+  },
   admin: {
     type: Boolean,
     default: false
@@ -16,7 +27,10 @@ var User = new Schema({
   collection: 'Users'
 });
 
+User.methods.getName = function () {
+  return (this.firstname + '' + this.lastname);
+}
 
 User.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('Users', User);

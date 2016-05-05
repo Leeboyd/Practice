@@ -57,6 +57,8 @@
 利用Express framework開發REST API，
 Routing "GET"、"POST"、"DELETE"、"PUT" 四個動作，
 對應"查詢"、"新增"、"刪除"、"更新" 四個功能
-models: Mongoose schemas （ORM）和 MongoDB database (no-SQl DB)
+Models: Mongoose schemas （ORM）和 MongoDB database (no-SQl DB)
+
 + 權限管理：admin用戶才可以做"POST"、"DELETE"、"PUT"、"GET"（查詢）有login的用戶都能操作
++ Population：利用ObjectIds做到不同collections互相參考（如SQL中的JOIN）的功能。
 ```

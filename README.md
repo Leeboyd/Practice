@@ -16,22 +16,22 @@
 ## javascript
 * Tainan Food
 ```ruby
-使用{{mustache}}模板，將firebase資料庫render至網頁 
+使用{{mustache}}模板，將firebase資料庫render至網頁
 ```
 [mustache.js](https://github.com/janl/mustache.js/)
 * Ractive CRUD
 ```ruby
-為Tainan Food列表建立"新增","修改","刪除"功能 
+為Tainan Food列表建立"新增","修改","刪除"功能
 ```
 [Ractive.js](http://www.ractivejs.org/)
 * FB_graph_api
 ```erb
-實作FB登入取得Access Tokens，列出使用者發佈的文章 
+實作FB登入取得Access Tokens，列出使用者發佈的文章
 ```
 ## node.js
 * PTTMailer
 ```ruby
-使用npm模組化設計，做到"自動排程" -> "爬文" -> "儲存" -> "寄到信箱"４個功能 
+使用npm模組化設計，做到"自動排程" -> "爬文" -> "儲存" -> "寄到信箱"４個功能
 ```
 * Basic_Authentication
 
@@ -62,3 +62,7 @@ Models: Mongoose schemas （ORM）和 MongoDB database (no-SQl DB)
 + 權限管理：admin用戶才可以做"POST"、"DELETE"、"PUT"、"GET"（查詢）有login的用戶都能操作
 + Population：利用ObjectIds做到不同collections互相參考（如SQL中的JOIN）的功能。
 ```
+
+  2.1 OAuth
+  + 新增 Passport’s Facebook Strategy
+  + 加入２條 routes: one for FB authentication and one for handling the FB callback.  

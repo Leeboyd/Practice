@@ -11,6 +11,8 @@ var User = new Schema({
     type: String,
     require: true
   },
+  OauthId: String,
+  OauthToken: String,
   firstname: {
     type: String,
     default: ''

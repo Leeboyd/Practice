@@ -4,11 +4,14 @@ var express = require('express'),
     logger = require('morgan'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
-    passport = require('passport'),
-    LocalStrategy = require('passport-local').Strategy;
+    passport = require('passport');
+
+// var LocalStrategy = require('passport-local').Strategy;
+
 
 //Configuration
-var config = require('./config');
+var config = require('./config'),
+    authenticate = require('./authenticate');
 
 // Connect to the server
 var mongoose = require('mongoose');
@@ -49,11 +52,11 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 
 // Passport config
-var User = require('./models/user');
+// var User = require('./models/user');
 app.use(passport.initialize());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 
 //靜態檔案位置
 app.use(express.static(path.join(__dirname, 'public')));

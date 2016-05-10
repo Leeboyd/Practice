@@ -13,6 +13,37 @@ router.get('/', Verify.verifyOrdinaryUser, Verify.verifyAdmin, function(req, res
     })
 });
 
+// route for facebook authentication and login
+router.get('/facebook', passport.authenticate('facebook'), function (req, res){
+
+});
+// handle the callback after facebook has authenticated the user
+router.get('/facebook/callback', function(req, res, next){
+  passport.authenticate('facebook', function(err, user, info) {
+    if (err) {
+      return next(err);
+    }
+    if (!user) {
+      return res.staus(401).json({
+        err: info
+      });
+    }
+    req.logIn(user, function (err) {
+      if (err) {
+        return res.status(500).json({
+          err: 'Could not Login FB'
+        });
+      }
+      var token = Verify.getToken(user);
+      res.status(200).json({
+        status: 'FB Login successful!',
+        success: true,
+        token: token
+      });
+    });
+  })(req, res, next);
+});
+
 router.post('/register', function(req, res) {
     console.log("registering: " + req.body.username);
     User.register(new User({

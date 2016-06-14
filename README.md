@@ -65,4 +65,7 @@ Models: Mongoose schemas （ORM）和 MongoDB database (no-SQl DB)
 
   2.1 OAuth
   + 新增 Passport’s Facebook Strategy
-  + 加入２條 routes: one for FB authentication and one for handling the FB callback.  
+  + 加入２條 routes: one for FB authentication and one for handling the FB callback.
+
+  6/14 複習
+  + 新增1條 routes:/favorites，並加入相對應的routing，以及RESTful API。

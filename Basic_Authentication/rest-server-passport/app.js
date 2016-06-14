@@ -21,7 +21,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
   // we're connected!
   console.log("Connected correctly to server");
-})
+});
 
 //Routers
 var routes = require('./routes/index'),
@@ -29,6 +29,7 @@ var routes = require('./routes/index'),
     dishRouter = require('./routes/dishRouter'),
     promoRouter = require('./routes/promoRouter'),
     leaderRouter = require('./routes/leaderRouter');
+    favorRouter = require('./routes/favorRouter');
 
 var app = express();
 
@@ -67,6 +68,7 @@ app.use('/users', users);
 app.use('/dishes', dishRouter);
 app.use('/promo', promoRouter);
 app.use('/leader', leaderRouter);
+app.use('/favorites', favorRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

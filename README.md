@@ -69,3 +69,11 @@ Models: Mongoose schemas （ORM）和 MongoDB database (no-SQl DB)
 
   6/14 複習
   + 新增1條 routes:/favorites，並加入相對應的routing，以及RESTful API。
+
+## Framework: Vue.js
+
+1. vueSPA
+  練習使用Vue component，以及前端routing的概念，實作Single Page App.
+  因為參考了ES6語法，故使用[Babel](https://babeljs.io/)編譯，以及[Webpack](https://webpack.github.io/)打包。
+  + 參考資料
+  [Build an App with Vue.js](https://auth0.com/blog/2015/11/13/build-an-app-with-vuejs/)

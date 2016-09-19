@@ -53,43 +53,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/* Hide un-compiled mustache bindings
-until the Vue instance is ready */
-
-[v-cloak] {
-  display: none;
-}
-
-* {
-	margin:0;
-	padding:0;
-}
-
-body {
-	font:15px/1.3 'Open Sans', sans-serif;
-	color: #5e5b64;
-	text-align:center;
-}
-
-a, a:visited {
-	outline:none;
-	color:#389dc1;
-}
-
-a:hover{
-	text-decoration:none;
-}
-
-section, footer, header, aside, nav{
-	display: block;
-}
 
 #v_editor{
 	height:300px;
 	position:relative;
 	padding-top: 150px;
 }
-
 
 /*-------------------------
 	The edit v_tooltip

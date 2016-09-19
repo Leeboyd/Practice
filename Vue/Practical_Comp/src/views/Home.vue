@@ -1,11 +1,11 @@
 <template lang="html">
-  <div id="app">
+  <div id="v_home">
     <img class="logo" src="../assets/logo.png">
     <hello inline-template>
       <h1 style="color:#42b983;">{{ msg }}</h1>
     </hello>
     <p>
-      Welcome to your Vue.js app!
+      Welcome to My 5 practical examples!
     </p>
     <p>
       To get a better understanding of how this boilerplate works, check out
@@ -51,15 +51,16 @@ export default {
 </script>
 
 <style lang="css" scoped>
-  #app {
+  #v_home {
     color: #2c3e50;
     margin-top: -100px;
     max-width: 600px;
     font-family: Source Sans Pro, Helvetica, sans-serif;
     text-align: center;
+    margin: 0 auto;
   }
 
-  #app a {
+  #v_home a {
     color: #42b983;
     text-decoration: none;
   }

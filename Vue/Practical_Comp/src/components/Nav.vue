@@ -5,7 +5,7 @@
           defined in the JavaScript Vue instance. It will change the value of "active". -->
       <a v-link="{ path: '/home' }" class="home" v-on:click="makeActive('home')">Home</a>
       <a v-link="{ path: '/editor' }" class="editor" v-on:click="makeActive('editor')">Editor</a>
-      <a href="#" class="services" v-on:click="makeActive('services')">Services</a>
+      <a v-link="{ path: '/services' }" class="services" v-on:click="makeActive('services')">Services</a>
       <a href="#" class="contact" v-on:click="makeActive('contact')">Contact</a>
 
       <ul class="nav navbar-nav navbar-right">

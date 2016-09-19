@@ -42,7 +42,7 @@ export default {
   methods: {
     submit() {
       var credentials = {
-        usernaem: this.credentials.username,
+        username: this.credentials.username,
         password: this.credentials.password
       }
       // We need to pass the component's this context

@@ -1,5 +1,5 @@
 <template lang="html">
-  <div id="v_home">
+  <div id="v_home" class="col-sm-6 col-sm-offset-3">
     <img class="logo" src="../assets/logo.png">
     <hello inline-template>
       <h1 style="color:#42b983;">{{ msg }}</h1>
@@ -54,10 +54,10 @@ export default {
   #v_home {
     color: #2c3e50;
     margin-top: -100px;
-    max-width: 600px;
+    /*max-width: 600px;*/
     font-family: Source Sans Pro, Helvetica, sans-serif;
     text-align: center;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
   }
 
   #v_home a {

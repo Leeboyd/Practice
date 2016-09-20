@@ -6,15 +6,13 @@
       <a v-link="{ path: '/home' }" class="home" v-on:click="makeActive('home')">Home</a>
       <a v-link="{ path: '/editor' }" class="editor" v-on:click="makeActive('editor')">Editor</a>
       <a v-link="{ path: '/services' }" class="services" v-on:click="makeActive('services')">Services</a>
-      <a href="#" class="contact" v-on:click="makeActive('contact')">Contact</a>
+      <a v-link="{ path: '/courses' }" class="courses" v-on:click="makeActive('courses')">Courses</a>
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
-
     </div>
-
 	</nav>
   <p>You are now at <b>{{active}}</b></p>
 </template>
@@ -77,7 +75,7 @@ nav a:last-child{
 nav.home .home,
 nav.editor .editor,
 nav.services .services,
-nav.contact .contact{
+nav.courses .courses{
 	background-color:#e35885;
 }
 

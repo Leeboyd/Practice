@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
   form {
   	background-color: #61a1bc;
   	border-radius: 2px;
@@ -82,7 +82,7 @@ export default {
   	/*width: 400px;*/
     text-align: center;
   	padding: 35px 60px;
-  	margin: 50px auto;
+  	/*margin: 50px auto;*/
   }
 
   form h1 {

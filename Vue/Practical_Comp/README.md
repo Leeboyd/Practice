@@ -1,27 +1,21 @@
-# laracast
+# 5 Practical Examples For Learning Vue.js
 
-> A Vue.js project
+> [tutorialzine](http://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js/)
 
-## Build Setup
+## 設定步驟：
 
 ``` bash
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# 開發時期：serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
+# 部署：build for production with minification
 npm run build
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 練習內容：
+1. 前端routing
+2. two-way binding
+3. Custom Filters

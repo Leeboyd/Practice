@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App'
 import Home from './views/Home.vue'
 import Editor from './components/Editor.vue'
+import Courses from './components/Courses.vue'
+
 import Services from './views/Services.vue'
 
 import VueRouter from 'vue-router'
@@ -20,6 +22,10 @@ router.map({
 
   '/services': {
     component: Services,
+  },
+
+  '/courses': {
+    component: Courses,
   },
 })
 

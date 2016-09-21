@@ -7,6 +7,7 @@
       <a v-link="{ path: '/editor' }" class="editor" v-on:click="makeActive('editor')">Editor</a>
       <a v-link="{ path: '/services' }" class="services" v-on:click="makeActive('services')">Services</a>
       <a v-link="{ path: '/courses' }" class="courses" v-on:click="makeActive('courses')">Courses</a>
+      <a v-link="{ path: '/grid' }" class="grid" v-on:click="makeActive('grid')">Grid</a>
 
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -39,7 +40,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="css" scoped>
 nav{
 	display:inline-block;
 	/*margin:60px auto 45px;*/
@@ -75,7 +76,8 @@ nav a:last-child{
 nav.home .home,
 nav.editor .editor,
 nav.services .services,
-nav.courses .courses{
+nav.courses .courses,
+nav.grid .grid{
 	background-color:#e35885;
 }
 

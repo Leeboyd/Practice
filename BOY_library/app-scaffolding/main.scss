@@ -1,0 +1,24 @@
+@import "compass/reset";
+@import "compass/css3";
+
+// font awesome
+$fa-font-path: '../fonts/';   // path to fonts
+@import './fa/font-awesome';  // path to font-awesome scss
+
+@import url("https://fonts.googleapis.com/earlyaccess/notosanstc.css");
+
+%flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+// .container {
+//     @extend %flexbox;
+// }
+
+// p {
+//   font-family: 'Noto Sans TC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+// }

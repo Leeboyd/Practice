@@ -21,6 +21,9 @@
   + 參考資料
   [5 Practical Examples For Learning Vue.js](http://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js/)
 
+4. JS30
+  不借助框架和引用library，用純 JavaScript 來完成 Wes Bos 推出 JS30 挑戰。
+  
 ## 個人程式庫整理
 1. app-scaffoldimg
   建置 ES6 環境，使用如 `Arrow Functions`、`Classes`、 `Import` 等語法，更進一步使用 `async/await`，
@@ -39,3 +42,7 @@
   + 參考資料
   [Datepicker](https://jqueryui.com/datepicker/)
   [vue-date](http://www.showonne.com/vue-date/dist/browser/)
+
+4. datatable
+  自製資料表格，實現前端呈現、排序、過濾器以及分頁功能的 Vue 組件
+  > `#Vue`

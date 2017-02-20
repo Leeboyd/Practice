@@ -3,7 +3,6 @@
 
 **Exercise 1: Drum**
 
-Exercise 1: JavaScript Drum Kit
 > Complete Date: Feb 16, 2016
 
 + 偵測鍵盤事件
@@ -11,6 +10,12 @@ Exercise 1: JavaScript Drum Kit
 + 其他：音效播放、Array.from方法
 參考：[Array.from](http://wiki.jikexueyuan.com/project/es6/array.html)
 
+**Exercise 2: JSCLOCK**
+
+> Complete Date: Feb 20, 2016
+
++ 原生時間API
++ js 操作節點 style 更動
 
 # 參考資料
 

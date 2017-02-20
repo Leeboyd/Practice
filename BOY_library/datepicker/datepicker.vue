@@ -3,8 +3,7 @@
         <div class="input-wrapper" @mouseenter="showCancel = true" @mouseleave="showCancel = false">
             <div class="input" @click="togglePanel" v-text="range ? value[0] + ' -- ' + value[1] : value"></div>
             <transition name="fade">
-                <i class="fa fa-calendar" aria-hidden="true" v-show="showCancel" @click="togglePanel"></i>
-                <!-- <i class="fa fa-google-plus-square cancel-btn" aria-hidden="true" v-show="showCancel" @click="clear"></i> -->
+                <i class="glyphicon glyphicon-calendar" aria-hidden="true" v-show="showCancel" @click="togglePanel"></i>
             </transition>
         </div>
         <transition name="toggle">
@@ -102,7 +101,7 @@
             max: {default: '3016-01-01'},
             value: {
                 type: [String, Array],
-                default: ''
+                default: '1991-1-1'
             },
             range: {
                 type: Boolean,
@@ -365,3 +364,253 @@
         }
     }
 </script>
+<style lang="css" scoped>
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.date-picker {
+  position: relative;
+  height: 32px;
+}
+
+.input-wrapper {
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  align-items: center;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+  height: 2.5em;
+  line-height: 2.5em;
+  font-size: 1em;
+  padding: 0 0.75em;
+  -moz-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+}
+.input-wrapper:active, .input-wrapper:focus {
+  outline-style: none;
+  border: 1px solid turquoise;
+  -moz-box-shadow: inset 0 1px 2px turquoise;
+  -webkit-box-shadow: inset 0 1px 2px turquoise;
+  box-shadow: inset 0 1px 2px turquoise;
+}
+
+.input {
+  height: 100%;
+  width: 100%;
+  font-size: inherit;
+  padding-left: 4px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.cancel-btn {
+  height: 14px;
+  width: 14px;
+}
+
+.date-panel {
+  position: absolute;
+  z-index: 5000;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  width: 320px;
+  padding: 5px 10px 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+  transform: translateY(4px);
+}
+
+.panel-header {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+.arrow-left, .arrow-right {
+  flex: 1;
+  font-size: 20px;
+  line-height: 2;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.arrow-disable {
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.year-range {
+  font-size: 20px;
+  line-height: 2;
+  flex: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.year-month-box {
+  flex: 3;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+.type-year, .type-month, .date-list {
+  background-color: #fff;
+}
+
+.year-box, .month-box {
+  transition: all ease .1s;
+  font-family: Roboto, sans-serif;
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
+  line-height: 2;
+  cursor: pointer;
+  background-color: #fff;
+}
+.year-box:hover, .month-box:hover {
+  background-color: #2e353d;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  color: #e1ffff;
+}
+
+.year-list, .month-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.year-list li, .month-list li {
+  font-family: Roboto, sans-serif;
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  cursor: pointer;
+  text-align: center;
+  font-size: 20px;
+  width: 33%;
+  padding: 10px 0;
+}
+.year-list li:hover, .month-list li:hover {
+  background-color: #2e353d;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  color: #fff;
+}
+.year-list li.selected, .month-list li.selected {
+  background-color: #2e353d;
+  color: #fff;
+}
+.year-list li.invalid, .month-list li.invalid {
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+.date-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.date-list .valid:hover {
+  background-color: #eee;
+}
+.date-list li {
+  transition: all ease .1s;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-bottom: 1px solid #fff;
+  position: relative;
+  margin: 2px;
+}
+.date-list li:not(.firstItem) {
+  margin-left: 10px;
+}
+.date-list li .message {
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  position: relative;
+  height: 30px;
+}
+.date-list li .message.selected .bg {
+  background-color: #2e353d;
+}
+.date-list li .message.selected span {
+  color: #fff;
+}
+.date-list li .message:not(.selected) .bg {
+  transform: scale(0);
+  opacity: 0;
+}
+.date-list li .message:not(.selected):hover .bg {
+  background-color: #2e353d;
+  transform: scale(1);
+  opacity: .6;
+}
+.date-list li .message:not(.selected):hover span {
+  color: #fff;
+}
+.date-list li .message .bg {
+  height: 30px;
+  width: 100%;
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+.date-list li .message span {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.date-list li.invalid {
+  cursor: not-allowed;
+  color: #ccc;
+}
+
+.weeks {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.weeks li {
+  font-weight: 600;
+}
+
+.weeks, .date-list {
+  width: 100%;
+  text-align: center;
+}
+.weeks .preMonth, .weeks .nextMonth, .date-list .preMonth, .date-list .nextMonth {
+  color: #ccc;
+}
+.weeks li, .date-list li {
+  font-family: Roboto;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.toggle-enter, .toggle-leave-active {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.toggle-enter-active, .toggle-leave-active {
+  transition: all ease .2s;
+}
+</style>

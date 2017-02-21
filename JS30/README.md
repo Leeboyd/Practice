@@ -29,6 +29,14 @@
 [HTMLElement.dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
 [Using CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables)
 
+**Exercise 4: Array Cardio Day 1**
+
+> Complete Date: Feb 21, 2016
+
++ Array.prototype 方法, e.g. reduce()
++ HTMLElement.querySelector 簡易爬蟲
++ console.table(), Array destructuring
+
 
 # 參考資料
 

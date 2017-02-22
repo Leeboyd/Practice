@@ -37,6 +37,16 @@
 + HTMLElement.querySelector 簡易爬蟲
 + console.table(), Array destructuring
 
+**Exercise 5: CSS Flex**
+
+> Complete Date: Feb 22, 2016
+
++ CSS Flexbox
++ CSS Animation (transition)
++ console.table(), Array destructuring
++ 參考：
+  + [A complete guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+  + [Flexbox Froggy](http://flexboxfroggy.com/)
 
 # 參考資料
 

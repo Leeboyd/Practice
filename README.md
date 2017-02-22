@@ -23,7 +23,7 @@
 
 4. JS30
   不借助框架和引用library，用純 JavaScript 來完成 Wes Bos 推出 JS30 挑戰。
-  
+
 ## 個人程式庫整理
 1. app-scaffoldimg
   建置 ES6 環境，使用如 `Arrow Functions`、`Classes`、 `Import` 等語法，更進一步使用 `async/await`，
@@ -46,3 +46,9 @@
 4. datatable
   自製資料表格，實現前端呈現、排序、過濾器以及分頁功能的 Vue 組件
   > `#Vue`
+
+5. Vuex 聊天室
+  透過 Vuex 管理不同組件間的共同狀態，並整理基本 Vue SPA 套件，`Vue-router` 的基本結構
+  > `#Vuex` `#Vue-router`
+  + 參考資料
+  [DATA FLOW IN VUE AND VUEX](https://benjaminlistwon.com/blog/data-flow-in-vue-and-vuex/)

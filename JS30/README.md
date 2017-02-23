@@ -43,10 +43,20 @@
 
 + CSS Flexbox
 + CSS Animation (transition)
-+ console.table(), Array destructuring
 + 參考：
   + [A complete guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
   + [Flexbox Froggy](http://flexboxfroggy.com/)
+
+**Exercise 6: Fetch (XMLHttpRequest)**
+
+> Complete Date: Feb 23, 2016
+
++ Fetch API
++ new RegExp(pattern, flags)
++ HTML mutation
++ 參考：
+  + [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+  + [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 
 # 參考資料
 

@@ -47,8 +47,8 @@
   自製資料表格，實現前端呈現、排序、過濾器以及分頁功能的 Vue 組件
   > `#Vue`
 
-5. Vuex 聊天室
-  透過 Vuex 管理不同組件間的共同狀態，並整理基本 Vue SPA 套件，`Vue-router` 的基本結構
+5. FirstHeadIntoVuex
+  透過 Vuex 聊天室範例管理不同組件間的共同狀態，並整理基本 Vue SPA 套件，`Vue-router` 的基本結構
   > `#Vuex` `#Vue-router`
   + 參考資料
   [DATA FLOW IN VUE AND VUEX](https://benjaminlistwon.com/blog/data-flow-in-vue-and-vuex/)

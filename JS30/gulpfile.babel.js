@@ -21,8 +21,7 @@ import es from 'event-stream'
 gulp.task('es6', function() {
     // define input files
     var files = [
-        './06/06.js',
-
+        // './06/06.js',
         // './04/04.js',
         // './03/03.js',
         // './02/02.js',

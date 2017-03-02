@@ -55,16 +55,26 @@
 + new RegExp(pattern, flags)
 + HTML mutation
 + 參考：
-  + [Array.prototype.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
-  + [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
-  + [Array.prototype.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-  + [Array.prototype.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+  + [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) 
+  + [RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) 
   
 **Exercise 7: Array Cardio Day 2**
 
 > Complete Date: Mar 2, 2017
 
-+ [some](https://developer.moz)
+  + [Array.prototype.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+  + [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+  + [Array.prototype.find()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+  + [Array.prototype.findIndex()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+
+**Exercise 8: Canvas**
+
+> Complete Date: Mar 3, 2017
+
++ 邏輯順序， `'mousemove'` 事件更新滑鼠座標位置，當 `'mousedown'` 時，於 `'mousemove'` 事件時再掛上畫圖的處理
++ `'mouseup'`、`'mouseout'` 移除事件監聽處理
++ 參考 [nitishdayal](https://github.com/nitishdayal/JavaScript30) 重構，使用匿名函數隱藏邏輯，避免污染全域scope
+
 # 參考資料
 
 1. [Javascript 30](https://javascript30.com/)

@@ -20,7 +20,7 @@
         ctx.beginPath()
         ctx.moveTo(last_mouse.x, last_mouse.y)     // Starting point
         ctx.lineTo(mouse.x, mouse.y)               // Ending point
-        ctx.closePath();              // Create path starting from moveTo and ending at lineTo
+        ctx.closePath()              // Create path starting from moveTo and ending at lineTo
         ctx.stroke()                 // 畫上畫布
         // Ternary operator to reset/increase hue value                 
         hue >= 360 ? hue = 0 : hue++ 
@@ -33,11 +33,12 @@
       const setMouseLocation = (e) => {
         // Update values based on previous & current mouse locations using array destructuring
         [last_mouse.x, last_mouse.y] = [mouse.x, mouse.y];
-        [mouse.x, mouse.y] = [e.offsetX, e.offsetY];
+        [mouse.x, mouse.y] = [e.offsetX, e.offsetY]
       }
       // Attach event listeners
-      myCanvas.addEventListener('mousemove', setMouseLocation);
-      myCanvas.addEventListener('mousedown', () => myCanvas.addEventListener('mousemove', quickDraw));
-      myCanvas.addEventListener('mouseup', () => myCanvas.removeEventListener('mousemove', quickDraw));
-      myCanvas.addEventListener('mouseout', () => myCanvas.removeEventListener('mousemove', quickDraw));
-    })() // Immediately invoke anonymous function 
+      myCanvas.addEventListener('mousemove', setMouseLocation)
+      myCanvas.addEventListener('mousedown', () => myCanvas.addEventListener('mousemove', quickDraw))
+      myCanvas.addEventListener('mouseup', () => myCanvas.removeEventListener('mousemove', quickDraw))
+      myCanvas.addEventListener('mouseout', () => myCanvas.removeEventListener('mousemove', quickDraw))
+    })() 
+    // Immediately invoke anonymous function 

@@ -75,6 +75,10 @@
 + `'mouseup'`、`'mouseout'` 移除事件監聽處理
 + 參考 [nitishdayal](https://github.com/nitishdayal/JavaScript30) 重構，使用匿名函數隱藏邏輯，避免污染全域scope
 
+**Exercise 9: Dev Tools Domination**
+
+> Complete Date: Mar 4, 2017
+
 # 參考資料
 
 1. [Javascript 30](https://javascript30.com/)

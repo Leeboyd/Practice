@@ -84,6 +84,8 @@
 > Complete Date: Mar 4, 2017
 
 + 第一版，邏輯順序，在上一個 `checked` 的 todo，按住 `shift` 點另一個 todo 時，兩 todo 之間的都要 `checked`
++ [nitishdayal](https://github.com/nitishdayal/JavaScript30) 版，防止 v1 第一次直接按shift，導致全部都 `checked`,
+使用 `index` 讓程式更直覺。
 
 # 參考資料
 

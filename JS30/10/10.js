@@ -1,6 +1,6 @@
 // 目的：一個todolist, 按住 shift 可 check 多個 todo
-// 行為：在第一個 checked 的 todo，按住 shift 點最後一個 todo 時，兩者之間的 todo 都要 checked.
-// 按住 shift 時 looping 整個 todolist，
+// 行為：在上一個 `checked` 的 todo，按住 `shift` 點另一個 todo 時，兩 todo 之間的都要 `checked`
+// 按住 shift 時 looping 整個 todolist，檢查 flag ，如果是 true 就 check
 
 // step 1
 const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]')

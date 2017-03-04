@@ -77,7 +77,13 @@
 
 **Exercise 9: Dev Tools Domination**
 
+> Complete Date: Mar 3, 2017
+
+**Exercise 10: Hold Shift and Check**
+
 > Complete Date: Mar 4, 2017
+
++ 第一版，邏輯順序，在上一個 `checked` 的 todo，按住 `shift` 點另一個 todo 時，兩 todo 之間的都要 `checked`
 
 # 參考資料
 

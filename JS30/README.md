@@ -87,6 +87,16 @@
 + [nitishdayal](https://github.com/nitishdayal/JavaScript30) 版，防止 v1 第一次直接按shift，導致全部都 `checked`,
 使用 `index` 讓程式更直覺。
 
+**Exercise 11: HTML5 player**
+
+> Complete Date: Mar 4, 2017
+
++ 一步一步實作播放器的行為
+  * toggle 按鈕與影片 `play`/`pause`，並切換按鈕顯示
+  * 快進與退格
+  * 進度條樣式
+  * 點擊/拖曳進度條，並更新影片進度
+
 # 參考資料
 
 1. [Javascript 30](https://javascript30.com/)

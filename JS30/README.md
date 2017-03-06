@@ -97,6 +97,12 @@
   * 進度條樣式
   * 點擊/拖曳進度條，並更新影片進度
 
+**Exercise 12: KeyCode Detection**
+
+> Complete Date: Mar 6, 2017
+
++ 有趣的 Key Sequence Detection
+
 # 參考資料
 
 1. [Javascript 30](https://javascript30.com/)

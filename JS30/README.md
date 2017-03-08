@@ -103,6 +103,13 @@
 
 + 有趣的 Key Sequence Detection
 
+**Exercise 13: Scroll Event**
+
+> Complete Date: Mar 8, 2017
+
++ 計算視窗、`scrollY`等各種高度，以實現CSS transition
++ `debounce()` 以達效能優化
+
 # 參考資料
 
 1. [Javascript 30](https://javascript30.com/)

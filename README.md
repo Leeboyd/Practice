@@ -63,6 +63,6 @@
 | `title` | String *optional* | 大標題
 | `tagline` | String *optional* | 副標題
 | `call` | String *optional* | call to action 文字
-  > `#transition`
+
   + 樣式參考網站
   [citiesocial](http://www.citiesocial.com/)

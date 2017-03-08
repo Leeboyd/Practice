@@ -52,3 +52,17 @@
   > `#Vuex` `#Vue-router`
   + 參考資料
   [DATA FLOW IN VUE AND VUEX](https://benjaminlistwon.com/blog/data-flow-in-vue-and-vuex/)
+
+6. carousel
+  自製具 transition 的 carousel vue component，`<carousel>` 支持下列屬性:
+
+| attribute | type | description
+| --- | --- | ---
+| `src` | String | 圖源URI， E.g. `"//cdn.shopify.com/s/files/1/0254/0393/t/5/assets/slide-image-3.jpg?7985256824123693536"`
+| `ind` | Number | 顯示順序
+| `title` | String *optional* | 大標題
+| `tagline` | String *optional* | 副標題
+| `call` | String *optional* | call to action 文字
+  > `#transition`
+  + 樣式參考網站
+  [citiesocial](http://www.citiesocial.com/)

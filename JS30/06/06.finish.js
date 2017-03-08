@@ -16,6 +16,12 @@ var api = {
   }
 };
 
+// -------------------------------------
+// GET Data first
+// set up functionality in place (filter data)
+// Hooking it up to event listener
+// as well as mutating DOM
+// -------------------------------------
 var url = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
 var locations = [];

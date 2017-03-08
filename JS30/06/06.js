@@ -1,9 +1,9 @@
 const api = {
-	numberWithCommas(x) {
+  numberWithCommas (x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-	},
+  },
 
-  findMatcheLoc(query, locations) {
+  findMatcheLoc (query, locations) {
     return locations.filter(location => {
       // g: global (means any index of string); i: case insensitive,
       const regex = new RegExp(query, 'gi')
@@ -29,7 +29,7 @@ fetch(url)
   .catch((err) => (console.log(err)))
 
 
-function displayMatches() {
+function displayMatches () {
   console.log(this.value);
   const matches = api.findMatcheLoc(this.value, locations)
   const reformat = matches.map(location => {

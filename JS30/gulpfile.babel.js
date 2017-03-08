@@ -18,35 +18,37 @@ import es from 'event-stream'
 // Babelify - a babel plugin for browserify, to make browserify
 // handle es6 including imports.
 
-gulp.task('es6', function() {
-    // define input files
-    var files = [
-        // './06/06.js',
-        // './04/04.js',
-        // './03/03.js',
-        // './02/02.js',
-        // './01/01.js',
-    ];
+gulp.task('es6', () => {
+  // define input files
+  const files = [
+    './06/06.js',
+    './04/04.js',
+    './03/03.js',
+    './02/02.js',
+    './01/01.js'
+  ]
     // map them to our stream function
-    var tasks = files.map(function(entry) {
-        return browserify({ entries: [entry] })
-						.transform("babelify", { presets: ["es2015"] })
-            .bundle()
-						.on('error', gutil.log)
-            .pipe(source(entry))
-		// restore file information and postfix it
-            .pipe(rename({
-                extname: '.finish.js'
-            }))
-            .pipe(gulp.dest('./'));
-        });
+  const tasks = files.map((entry) => {
+    return browserify({ entries: [entry] })
+        .transform('babelify', { presets: ["es2015"] })
+        .bundle()
+        .on('error', gutil.log)
+        .pipe(source(entry))
+    // restore file information and postfix it
+        .pipe(
+            rename({
+              extname: '.finish.js'
+            })
+         )
+        .pipe(gulp.dest('./'))
+  })
     // create a merged stream
-		// We merge that array to one stream which will be returned from our task.
-		// This way, we tell gulp that this stream is the one stream to execute.
-		// That it’s an array internally does not bother anymore.
-    return es.merge.apply(null, tasks);
-});
+    // We merge that array to one stream which will be returned from our task.
+    // This way, we tell gulp that this stream is the one stream to execute.
+    // That it’s an array internally does not bother anymore.
+  return es.merge.apply(null, tasks)
+})
 
-gulp.task('watch',function() {
-	gulp.watch(['./**/**.js'],['es6'])
-});
+gulp.task('watch', () => {
+  gulp.watch(['./**/**.js'],['es6'])
+})

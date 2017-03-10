@@ -1,6 +1,6 @@
 # 前端學習 @ goodideas-studio
 
-> 內容：_ES6、Vue.js、個人程式庫整理_
+> 內容：_ES6、Vue.js_
 
 ## 簡介
 
@@ -20,6 +20,3 @@
   練習內容：**_ES6、前端routing、測試、eslint_**
   + 參考資料
   [5 Practical Examples For Learning Vue.js](http://tutorialzine.com/2016/03/5-practical-examples-for-learning-vue-js/)
-
-4. JS30
-  不借助框架和引用library，用純 JavaScript 來完成 Wes Bos 推出 JS30 挑戰。
